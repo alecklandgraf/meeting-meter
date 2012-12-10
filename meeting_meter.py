@@ -13,6 +13,7 @@ import datetime
 def run_meter(number_attendees, nominal_salary=.75, update_interval_seconds=60):
     total = 0
     print "Meeting started at %s" % (datetime.datetime.now(), )
+    print "Cost per minute: $%.2f\n" % (number_attendees * nominal_salary * update_interval_seconds / 60, )
     while True:
         time.sleep(update_interval_seconds)
         total += number_attendees * nominal_salary * update_interval_seconds / 60
