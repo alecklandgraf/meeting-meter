@@ -7,4 +7,5 @@ Usage
 =====
 
 meeting_meter.py [number of attendees]
+
 meeting_meter.py 7
