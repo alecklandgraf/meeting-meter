@@ -21,8 +21,12 @@ def run_meter(number_attendees, nominal_salary=.75, update_interval_seconds=60):
 
 def main(argv):
     if len(argv) > 0:
-        number_attendees = int(argv[0])
-        run_meter(number_attendees)
+        try:
+            number_attendees = int(argv[0])
+        except ValueError:
+            print "Number of attendees not given, Usage: meeting_meter.py [number of attendees]"
+        else:
+            run_meter(number_attendees)
     else:
         print "Missing number of attendees"
         print "Usage: meeting_meter.py [number of attendees]"
