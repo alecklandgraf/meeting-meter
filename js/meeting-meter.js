@@ -13,6 +13,8 @@ MeetingMeter.start_meeting = function () {
 
 };
 
-$("#start_meeting_button").live("click", function () {
-	MeetingMeter.start_meeting();
-});
+MeetingMeter._event_bindings = function () {
+	$("#start_meeting_button").live("click", function () {
+		MeetingMeter.start_meeting();
+	});
+}();
