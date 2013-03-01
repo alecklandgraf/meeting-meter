@@ -17,7 +17,7 @@ MeetingMeter.start_meeting = function () {
 		MeetingMeter.meetingStarted = true;
 		var selected_number_of_people = $(".pick_how_many_people").val();
 		var minutely_cost = selected_number_of_people * MeetingMeter.options.nominal_salary * MeetingMeter.options.update_interval_seconds / 60;
-		MeetingMeter.timerId = setInterval(function() { MeetingMeter.timer(minutely_cost);},1000);
+		MeetingMeter.timerId = setInterval(function() { MeetingMeter.timer(minutely_cost);},60000);
 		if (MeetingMeter.initialStart) {
 			var d = new Date();
 			var t = d.toLocaleTimeString();
