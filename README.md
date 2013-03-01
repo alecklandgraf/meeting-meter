@@ -1,9 +1,10 @@
 meeting meter
 ========
 
-Adds a cost clock to your meeting
+Adds a cost clock to your meeting, python and browser (js)
+http://alecklandgraf.github.com/meeting-meter/
 
-Usage
+Usage (python)
 =====
 
 `meeting_meter.py [number of attendees]`
