@@ -8,8 +8,9 @@ MeetingMeter.options = MeetingMeter.options || {
 
 MeetingMeter.timerId = MeetingMeter.timerId || 0;
 MeetingMeter.duration = MeetingMeter.duration || 0;
-MeetingMeter.initialStart = true;
-MeetingMeter.meetingStarted = false;
+MeetingMeter.meetingCost = MeetingMeter.meetingCost || 0;
+MeetingMeter.initialStart = MeetingMeter.initialStart || true;
+MeetingMeter.meetingStarted = MeetingMeter.meetingStarted || false;
 
 MeetingMeter.start_meeting = function () {
 	if (!MeetingMeter.meetingStarted) {
@@ -37,6 +38,7 @@ MeetingMeter.pause_meeting = function () {
 
 MeetingMeter.reset_meeting = function () {
 	MeetingMeter.duration = 0;
+	MeetingMeter.meetingCost = 0;
 	MeetingMeter.initialStart = true;
 	MeetingMeter.meetingStarted = false;
 	$("#meeting_start_time").html("");
@@ -62,5 +64,6 @@ MeetingMeter._event_bindings = function () {
 
 MeetingMeter.timer = function (cost) {
 	MeetingMeter.duration += 1;
-	$("#current_cost").html("$" + (MeetingMeter.duration * cost).toFixed(2));
+	MeetingMeter.meetingCost += cost;
+	$("#current_cost").html("$" + (MeetingMeter.meetingCost).toFixed(2));
 };
